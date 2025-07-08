@@ -96,6 +96,7 @@
   <script>
     async function scanArbitrage() {
       try {
+        // ✅ CORS PROXY üzerinden veri alıyoruz
         const response = await fetch('https://corsproxy.io/?https://api.dexscreener.com/latest/dex/pairs/bsc');
         const data = await response.json();
 
@@ -154,7 +155,7 @@
 
     function startScan() {
       scanArbitrage(); // İlk tarama
-      setInterval(scanArbitrage, 30000); // 30 sn'de bir yenile
+      setInterval(scanArbitrage, 30000); // 30 saniyede bir yenile
     }
   </script>
 
